@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <script>
+        window.onload = function() {
+            const form = document.getElementById('loginForm');
+            form.onsubmit = function(event) {
+                event.preventDefault(); // Mencegah pengiriman formulir
+                const username = document.getElementById('username').value;
+                const password = document.getElementById('password').value;
+                if (username === 'testuser' && password === 'password123') {
+                    alert('Login successful!'); // Tindakan setelah login berhasil
+                } else {
+                    document.getElementById('error').innerText = 'Invalid username or password';
+                }
+            };
+        };
+    </script>
+</head>
+<body>
+    <h2>Login</h2>
+    <form id="loginForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+        <br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <br><br>
+        <button type="submit" id="loginButton">Login</button>
+    </form>
+    <div id="error" style="color: red;"></div> <!-- Tempat untuk pesan kesalahan -->
+</body>
+</html>
